@@ -1,0 +1,85 @@
+body { /* Keep body styles */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 15px; background-color: #f4f7f6; color: #333; overscroll-behavior: contain;
+}
+.tracker-container { /* Keep container styles */
+     max-width: 450px; margin: 5px auto; background-color: #fff; padding: 20px 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+      /* H1 title removed */
+      h2 { /* Page Titles - keep hidden for now */
+     display: none;
+     text-align: center; color: #2c3e50; margin-top: 5px; margin-bottom: 20px; font-weight: 500; font-size: 1.3em;
+}
+
+/* --- Page Structure --- */
+.page {
+     display: none; /* Hide pages by default */
+     /* Add some padding if needed, or rely on container padding */
+     padding-top: 10px;
+     padding-bottom: 10px;
+  }
+ .page.active {
+     display: block; /* Show only the page with the 'active' class */
+ }
+
+/* --- Slider Container --- */
+.slider-container {
+    display: flex; justify-content: center; align-items: center; margin-bottom: 20px; min-height: 240px; position: relative;
+}
+
+/* --- roundSlider Customization --- */
+/* Reverted to simpler setup - similar to before */
+#energySliderContainer,
+#moodSliderContainer {
+     width: 80%; height: auto; aspect-ratio: 1 / 1; margin: 0 auto;
+}
+.rs-path-color { background-color: #e9ecef; }
+
+/* Gradient on the Range Color */
+ #energySliderContainer .rs-range-color,
+ #moodSliderContainer .rs-range-color {
+     background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #e74c3c 100%);
+ }
+
+.rs-handle {
+     background-color: #555; border: 3px solid #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.2); padding: 0 !important;
+ }
+ .rs-handle::after { display: none !important; }
+
+ /* Style the TOOLTIP TEXT (used by roundSlider for center label) */
+.rs-tooltip-text {
+     font-size: 1.8em !important; /* INCREASED font size (adjust value as needed) */
+     font-weight: bold !important;  /* MAKE text bold */
+     color: #34495e !important; /* Ensure color remains */
+     /* Optional: Adjust vertical alignment if needed */
+     /* margin-top: -5px; */ /* Example adjustment */
+     /* Ensure it stays centered */
+     display: inline-block;
+     text-align: center;
+ }
+
+/* Ensure default tooltip container styling is removed (may already exist) */
+ .rs-tooltip {
+     border: none !important;
+     background-color: transparent !important;
+     box-shadow: none !important;
+     /* Ensure the container doesn't limit the text */
+     width: auto !important;
+     height: auto !important;
+ }
+
+/* --- Description Box (Keep same) --- */
+.description-box { min-height: 4.5em; font-weight: 500; color: #333; background-color: #f8f9fa; border: 1px solid #eee; padding: 12px 15px; border-radius: 6px; text-align: center; margin-bottom: 25px; line-height: 1.5; }
+
+/* --- Navigation Buttons (Keep same) --- */
+ .nav-buttons { display: flex; justify-content: space-between; margin-top: 20px; }
+ .nav-buttons button { padding: 12px 20px; font-size: 1.1em; font-weight: 500; border: none; border-radius: 6px; cursor: pointer; background-color: #6c757d; color: white; min-width: 100px; transition: background-color 0.2s ease; }
+ .nav-buttons button:hover { background-color: #5a6268; }
+ .nav-buttons button:disabled { background-color: #cccccc; cursor: not-allowed; }
+ .nav-buttons button#submitBtn { background-color: #28a745; }
+ .nav-buttons button#submitBtn:hover { background-color: #218838; }
+
+ /* --- Feedback Message (Keep same) --- */
+#feedbackMessage { margin-top: 15px; padding: 10px; border-radius: 5px; display: none; font-weight: bold; text-align: center; }
+#feedbackMessage.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+#feedbackMessage.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }

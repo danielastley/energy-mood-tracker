@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Energy & Mood Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+    
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <style>
+    </style>
+</head>
+<body>
+
+    <div class="tracker-container">
+        <div id="feedbackMessage"></div> <!-- Moved to top -->
+
+        <form id="trackerForm" action="process-energy-mood.php" method="POST">
+
+            <!-- Page 1: Energy Level -->
+            <div class="page active" id="pageEnergy">
+                <!-- Using roundSlider default tooltip for value display -->
+                <div class="slider-container">
+                    <div id="energySliderContainer"></div> <!-- No text div inside -->
+                </div>
+                <div class="description-box" id="energyDescription">Loading description...</div>
+                <input type="hidden" name="energyValue" id="energyValueInput" value="50">
+            </div>
+
+            <!-- Page 2: Mood Level -->
+            <div class="page" id="pageMood">
+                 <div class="slider-container">
+                    <div id="moodSliderContainer"></div> <!-- No text div inside -->
+                </div>
+                <div class="description-box" id="moodDescription">Loading description...</div>
+                <input type="hidden" name="moodValue" id="moodValueInput" value="50">
+            </div>
+
+             <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button type="button" id="prevBtn" disabled>Previous</button>
+                <button type="button" id="nextBtn">Next</button>
+                <button type="submit" id="submitBtn" style="display: none;">Save Check-in</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Include roundSlider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
