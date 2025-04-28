@@ -79,6 +79,34 @@ body { /* Keep body styles */
  .nav-buttons button#submitBtn { background-color: #28a745; }
  .nav-buttons button#submitBtn:hover { background-color: #218838; }
 
+ /* --- Styling for the Persistent Dashboard Link --- */
+
+.dashboard-link-container {
+    text-align: center; /* Center the link block */
+    margin-top: 5px;    /* Space below feedback message */
+    margin-bottom: 20px;/* Space above form content */
+}
+
+a.dashboard-link { /* Target the link specifically */
+    display: inline-block; /* Allows padding and behaves like a block */
+    padding: 8px 15px; /* Button padding */
+    background-color: #007bff; /* Blue background (or your preferred color) */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.95em; /* Slightly smaller than main buttons */
+    font-weight: 500;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    border: none; /* Ensure no default border */
+}
+
+a.dashboard-link:hover,
+a.dashboard-link:focus { /* Style for hover/focus */
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+    text-decoration: none;
+}
+
  /* --- Feedback Message (Keep same) --- */
 #feedbackMessage { margin-top: 15px; padding: 10px; border-radius: 5px; display: none; font-weight: bold; text-align: center; }
 #feedbackMessage.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }

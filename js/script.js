@@ -164,24 +164,26 @@
               // ... (code for status === 'success' / status === 'error') ...
               const urlParams = new URLSearchParams(window.location.search);
               const status = urlParams.get('status');
-               if (status === 'success') {
-                  feedbackElement.textContent = 'Check-in saved successfully! You can now close this window.';
-                  feedbackElement.className = 'success';
-                  feedbackElement.style.display = 'block';
-                  try {
-                      energySliderDiv.roundSlider("setValue", 50);
-                      moodSliderDiv.roundSlider("setValue", 50);
-                  } catch(e) { console.error("Error resetting sliders:", e);}
-                  updateEnergyDisplay(50);
-                  updateMoodDisplay(50);
-                  window.history.replaceState({}, document.title, window.location.pathname);
-              } else if (status === 'error') {
-                  const message = urlParams.get('message') || 'Failed to save data. Please try again.';
-                  feedbackElement.textContent = decodeURIComponent(message);
-                  feedbackElement.className = 'error';
-                  feedbackElement.style.display = 'block';
-                  window.history.replaceState({}, document.title, window.location.pathname);
-              }
+              if (status === 'success') {
+                // Use innerHTML to include the link
+                feedbackElement.innerHTML = 'Check-in saved successfully! You can close this window or <a href="dashboard.html">View Dashboard</a>.'; // MODIFIED LINE
+                feedbackElement.className = 'success';
+                feedbackElement.style.display = 'block';
+                try {
+                    energySliderDiv.roundSlider("setValue", 50);
+                    moodSliderDiv.roundSlider("setValue", 50);
+                } catch(e) { console.error("Error resetting sliders:", e);}
+                updateEnergyDisplay(50);
+                updateMoodDisplay(50);
+                window.history.replaceState({}, document.title, window.location.pathname);
+                // No auto-hide
+            } else if (status === 'error') { // Keep error handling as is
+                const message = urlParams.get('message') || 'Failed to save data. Please try again.';
+"                feedbackElement.textContent = 'Check-in saved successfully! You can now close this window.';
+"                feedbackElement.className = 'error';
+                feedbackElement.style.display = 'block';
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
  
  
               // Setup navigation button clicks ONLY if buttons exist

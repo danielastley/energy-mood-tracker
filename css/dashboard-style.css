@@ -1,0 +1,143 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.2em;
+    color: #555;
+}
+
+#messageArea {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #666;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+#messageArea.error {
+    color: #d9534f;
+    font-weight: bold;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.view-selector {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.view-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #eee;
+    color: #555;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #ddd;
+}
+
+.view-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.view-content {
+    display: none; /* Hide views by default */
+    margin-top: 20px;
+}
+
+.view-content.active {
+    display: block; /* Show active view */
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    height: 400px; /* Adjust as needed */
+    position: relative;
+}
+
+.navigation-controls {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+.navigation-controls p {
+     margin-bottom: 10px;
+     font-weight: bold;
+     color: #555;
+}
+
+.nav-button {
+    padding: 8px 12px;
+    margin: 3px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.nav-button:hover {
+    background-color: #eee;
+}
+.nav-button.selected {
+    background-color: #6c757d;
+    color: white;
+    border-color: #5a6268;
+    font-weight: bold;
+}
+
+/* --- Link back to Tracker --- */
+.tracker-link-container {
+    text-align: center; /* Center the link below the H1 */
+    margin-top: -10px; /* Pull it slightly closer to H1 */
+    margin-bottom: 25px; /* Add space before message area/tabs */
+}
+
+.tracker-link {
+    display: inline-block; /* Allows padding/styling */
+    padding: 6px 12px;
+    background-color: #6c757d; /* Match nav button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.tracker-link:hover {
+    background-color: #5a6268; /* Darken on hover */
+    text-decoration: none;
+    color: white;
+}

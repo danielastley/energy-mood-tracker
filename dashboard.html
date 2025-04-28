@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy & Mood Dashboard</title>
+    <!-- Link to dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard-style.css">
+
+    <!-- *** CORRECTED LIBRARY LINKS IN HEAD *** -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!-- Using the corrected cdnjs link for the adapter -->
+    <!-- This link might be the issue -->
+<!-- *** TRY THIS ADAPTER LINK *** -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.umd.min.js"></script>    <!-- *** END LIBRARY LINKS *** -->
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard</h1>
+
+        <p class="tracker-link-container">
+            <a href="energy-mood-tracker.html" class="tracker-link">Add New Check-in</a>
+        </p>
+        
+        <!-- Loading / Error Message Area -->
+        <div id="messageArea">Loading data...</div>
+
+        <!-- View Selection Tabs/Buttons -->
+        <div class="view-selector">
+            <button id="intraDayViewBtn" class="view-btn active">Intra-day View</button>
+            <button id="intraWeekViewBtn" class="view-btn">Intra-week View</button>
+        </div>
+
+        <!-- View Containers -->
+        <div id="intraDayView" class="view-content active">
+            <h2>Intra-day Energy & Mood (8am - 8pm)</h2>
+            <div class="chart-container">
+                <canvas id="dayChartCanvas"></canvas>
+            </div>
+            <div class="navigation-controls" id="dayNavButtons">
+                <p>Select Day:</p>
+                <!-- Day navigation buttons will be added here by JS -->
+            </div>
+        </div>
+
+        <div id="intraWeekView" class="view-content">
+            <h2>Intra-week Average Energy & Mood</h2>
+            <div class="chart-container">
+                <canvas id="weekChartCanvas"></canvas>
+            </div>
+            <div class="navigation-controls" id="weekNavButtons">
+                 <p>Select Week Starting:</p>
+                 <!-- Week navigation buttons will be added here by JS -->
+            </div>
+        </div>
+
+    </div><!-- /dashboard-container -->
+
+    <!-- Link to dashboard JavaScript file - placed at the end, no defer -->
+    <script src="js/dashboard-script.js"></script>
+</body>
+</html>
